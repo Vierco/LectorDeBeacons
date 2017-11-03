@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vierco.hello.pruebas" >
+
+
+    <!--TODO confirmar si filtro el BLE en Google Play -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Hola"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".Serv_Detector_balizas" android:label="My Service">
+            <intent-filter>
+                <action android:name="com.vierco.hello.pruebas.myServicio" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".IniciarServicioEnBoot"
+            android:enabled="true"
+            android:exported="true"
+            android:label="IniciarServicioEnBoot">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+
+    </application>
+
+</manifest>
