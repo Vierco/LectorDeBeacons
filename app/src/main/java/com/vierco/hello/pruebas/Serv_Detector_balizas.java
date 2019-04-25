@@ -18,8 +18,6 @@ import org.altbeacon.beacon.Region;
 import java.util.ArrayList;
 import java.util.Collection;
 
-//TODO añadir tras la respuesta del servidor -- balizasYaComprobadas.add(UUIDproximity);
-
 public class Serv_Detector_balizas extends Service implements BeaconConsumer {
 
     private static final String TAG = "dmode";
@@ -45,7 +43,6 @@ public class Serv_Detector_balizas extends Service implements BeaconConsumer {
         minor = id_minor.toString();
 
         // He mandado ya esta baliza dentro de esta región al servidor?
-
         if (balizasYaComprobadas.contains(UUIDproximity)){
             //NO envío la baliza al servidor
             Log.i(TAG,"No envío la baliza al servidor");
@@ -78,8 +75,8 @@ public class Serv_Detector_balizas extends Service implements BeaconConsumer {
             @Override
             public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
                 for (Beacon beacon : beacons) {
-//                    Log.i(TAG,"Beacon detected with id1: "+beacon.getId1()+" id2:"+beacon.getId2()+" id3: "+beacon.getId3()+" distance: "+beacon.getDistance());
-
+                    Log.i(TAG,"Beacon detected with id1: "+beacon.getId1()+" id2:"+beacon.getId2()+" id3: "+beacon.getId3()+" distance: "+beacon.getDistance());
+                    
                     id_UUIDproximity = beacon.getId1();
                     id_major = beacon.getId2();
                     id_minor = beacon.getId3();
@@ -141,16 +138,6 @@ public class Serv_Detector_balizas extends Service implements BeaconConsumer {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Log.i(TAG, "Service BEACON onStartCommand");
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-//                startActivity(new Intent(Serv_Detector_balizas.this, Hola.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-
-
-            }
-        }).start();
 
         return Service.START_STICKY;
     }
