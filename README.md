@@ -4,4 +4,5 @@ Lector de balizas beacon utilizando la librería [AltBeacon](https://github.com/
 
 Note: Esta librería ha continuado actulizándose desde la creación de este ejemplo, por lo que puede haber cambios significativos.
 
+With love - **2016**   
 
