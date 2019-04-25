@@ -13,30 +13,8 @@ public class Hola extends Activity  {
     Button start;
     Button stop;
     Button comprobar;
-
-//    protected static final String TAG = "dmode";
-//    TextView mensaje;
-//    private BeaconManager beaconManager;
-//
-//    Identifier id_UUIDproximity;
-//    Identifier id_major;
-//    Identifier id_minor;
-//
-//    String UUIDproximity;
-//    String major;
-//    String minor;
-//
-//    public void conversionDedatosObtenidosDelBeacon(){
-//
-//        UUIDproximity = id_UUIDproximity.toString();
-//        major = id_major.toString();
-//        minor = id_minor.toString();
-//
-//        Log.i(TAG, "Datosdel beacon:"+"\n"+"proximityUuid:"+" "+ UUIDproximity+"\n"+
-//                                    "major:"+" "+major+"\n"+
-//                                    "minor:"+" "+minor);
-//    }
-
+    
+    
     public boolean ComprobarServicioRunning(){
         ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE))
@@ -57,11 +35,6 @@ public class Hola extends Activity  {
         start = (Button) findViewById(R.id.start);
         stop = (Button) findViewById(R.id.stop);
         comprobar = (Button) findViewById(R.id.comprobar);
-
-//        mensaje = (TextView) findViewById(R.id.mensaje);
-//        beaconManager = BeaconManager.getInstanceForApplication(this);
-//        beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:0-3=4c000215,i:4-19,i:20-21,i:22-23,p:24-24"));
-//        beaconManager.bind(this);
 
         start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -86,8 +59,6 @@ public class Hola extends Activity  {
 
             }
         });
-
-
 
     }
 
