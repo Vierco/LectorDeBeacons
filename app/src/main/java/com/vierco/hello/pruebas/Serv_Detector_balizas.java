@@ -65,7 +65,7 @@ public class Serv_Detector_balizas extends Service implements BeaconConsumer {
     public void onBeaconServiceConnect() {
 
         try {
-            beaconManager.startRangingBeaconsInRegion(new Region("myRangingUniqueId", Identifier.parse("96CB4FB7-65C3-463D-93C9-3D1923904EB3"), Identifier.parse("1"), null));
+            beaconManager.startRangingBeaconsInRegion(new Region("myRangingUniqueId", Identifier.parse("96CB4FB7-65C3-XXXX-XXXX-XXXXXXXXXXXX"), Identifier.parse("1"), null));
 
         } catch (RemoteException e) {
         }
